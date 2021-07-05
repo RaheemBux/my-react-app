@@ -1,7 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-let data = [
+var data = [
 	{
 		"category":"Energy",
 		"questions":
@@ -395,28 +392,3 @@ let data = [
 		]
 	}
 ];
-
-function App() {
-  return <React.Fragment>
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello Welcome to World of React</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3>List of Categories</h3>
-        {
-          data.map(categories=>
-            {
-				console.log('Category ',categories.category);
-				<span>{categories.category}</span>
-                categories.questions.map(question=>
-					<span>{question.question}</span>		
-				)            
-            }
-          )
-        }
-      </header>
-    </div>
-  </React.Fragment>
-}
-
-export default App;
