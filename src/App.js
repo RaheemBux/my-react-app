@@ -399,23 +399,31 @@ let data = [
 function App() {
   return <React.Fragment>
     <div className="App">
-      <header className="App-header">
         <h1>Hello Welcome to World of React</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3>List of Categories</h3>
+		<h3>List of Categories</h3>
         {
           data.map(categories=>
             {
-				console.log('Category ',categories.category);
-				<span>{categories.category}</span>
-                categories.questions.map(question=>
-					<span>{question.question}</span>		
-				)            
-            }
+				return <div>	
+					<br></br><strong>{categories.category}</strong>
+					{
+						categories.questions.map(question=>
+							<div><br></br><span>{question.question}</span>
+							{
+								question.options.map(option=>
+									<div><br></br><span>{option}</span></div>
+								)
+							}
+							</div>
+									
+						)
+					}					  		
+				</div>           
+            }	
           )
         }
-      </header>
-    </div>
+	</div>
+
   </React.Fragment>
 }
 
