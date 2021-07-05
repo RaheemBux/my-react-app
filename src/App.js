@@ -398,20 +398,29 @@ let data = [
 
 function App() {
   return <React.Fragment>
-    <div className="App">
+    <div>
         <h1>Hello Welcome to World of React</h1>
 		<h3>List of Categories</h3>
         {
           data.map(categories=>
             {
 				return <div>	
-					<br></br><strong>{categories.category}</strong>
+						<ol>
+							<strong><li>{categories.category}</li></strong>
+						</ol>
 					{
 						categories.questions.map(question=>
-							<div><br></br><span>{question.question}</span>
+							<div>
+								<ol>
+									<span><li>{question.question}</li></span>
+								</ol>
 							{
 								question.options.map(option=>
-									<div><br></br><span>{option}</span></div>
+									<div>
+										<ol>
+											<span><li>{option}</li></span>
+										</ol>
+									</div>
 								)
 							}
 							</div>
