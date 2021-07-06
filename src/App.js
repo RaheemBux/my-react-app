@@ -405,7 +405,7 @@ function App() {
           data.map(categories=>
             {
 				return <div>	
-						<ol>
+						<ol> 
 							<strong><li>{categories.category}</li></strong>
 						</ol>
 					{
