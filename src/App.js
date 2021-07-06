@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 let data = [
@@ -398,39 +397,38 @@ let data = [
 
 function App() {
   return <React.Fragment>
-    <div>
+    <div className="App">
         <h1>Hello Welcome to World of React</h1>
 		<h3>List of Categories</h3>
-        {
+		<ol>
+        {	
           data.map(categories=>
             {
 				return <div>	
-						<ol> 
 							<strong><li>{categories.category}</li></strong>
-						</ol>
-					{
-						categories.questions.map(question=>
-							<div>
-								<ol>
-									<span><li>{question.question}</li></span>
-								</ol>
+							<ol>
 							{
-								question.options.map(option=>
-									<div>
-										<ol>
-											<span><li>{option}</li></span>
-										</ol>
-									</div>
+								categories.questions.filter(q=>q.question.includes('Wh')).map(question=>
+								<div>
+									<span><li>{question.question}</li></span>
+									<ol type='A'>
+									{
+										question.options.map(option=>
+											<div>
+												<span><li>{option}</li></span>
+											</div>
+										)
+									}
+									</ol>
+								</div>								
 								)
 							}
-							</div>
-									
-						)
-					}					  		
-				</div>           
-            }	
+							</ol>				  		
+						</div>           
+           	}	
           )
         }
+		</ol>
 	</div>
 
   </React.Fragment>
