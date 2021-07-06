@@ -405,12 +405,12 @@ function App() {
           data.map(categories=>
             {
 				return <div>	
-							<strong><li>{categories.category}</li></strong>
+							<strong className="categories"><li>{categories.category}</li></strong>
 							<ol>
 							{
 								categories.questions.filter(q=>q.question.includes('Wh')).map(question=>
 								<div>
-									<span><li>{question.question}</li></span>
+									<span className="questions"><li>{question.question}</li></span>
 									<ol type='A'>
 									{
 										question.options.map(option=>
