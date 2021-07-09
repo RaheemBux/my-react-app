@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import Login from './login/Login.js';
+
 let data = [
 	{
 		"category":"Energy",
@@ -397,8 +399,10 @@ let data = [
 
 function App() {
   return <React.Fragment>
+	<Login></Login> 
     <div className="App">
         <h1>Hello Welcome to World of React</h1>
+		
 		<h3>List of Categories</h3>
 		<ol>
         {	

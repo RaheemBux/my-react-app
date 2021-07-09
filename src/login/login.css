@@ -1,0 +1,18 @@
+.center{
+    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    background-color:cadetblue;
+    text-align: center;
+    margin-left: 25%;
+  }
+  .loginForm input{
+    border-radius: 15px;
+    height: 35px;
+    width: 350px;
+    outline: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    padding: 5px;
+    
+  }
