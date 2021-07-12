@@ -1,7 +1,5 @@
-import './App.css';
-import React from 'react';
-import Login from './login/Login.js';
-import Exam from './online-exam/Exam';
+import React, { Component } from "react";
+
 
 let data = [
 	{
@@ -397,46 +395,44 @@ let data = [
 		]
 	}
 ];
-function App() {
-  return <React.Fragment>
-    <div className="App">
-        <h1>Hello Welcome to World of React</h1>
-		<Exam></Exam>
+class Exam extends Component{
 
-		<h3>List of Categories</h3>
-		<ol>
-        {	
-          data.map(categories=>
-            {
-				return <div>	
-							<strong className="categories"><li>{categories.category}</li></strong>
-							<ol>
-							{
-								categories.questions.filter(q=>q.question.includes('Wh')).map(question=>
-								<div>
-									<span className="questions"><li>{question.question}</li></span>
-									<ol type='A'>
-									{
-										question.options.map(option=>
-											<div>
-												<span><li>{option}</li></span>
-											</div>
-										)
-									}
-									</ol>
-								</div>								
-								)
-							}
-							</ol>				  		
-						</div>           
-           	}	
-          )
-        }
-		</ol>
-		
-	</div>
+constructor(props){
+    super(props)
 
-  </React.Fragment>
+    this.state = {
+        category : '',
+        ename : '',
+    }  
 }
+handleSubmit = (e)=>{
+    this.setState({ [e.target.name]: e.target.value}); 
+    e.preventDefault();
+}
+render(){
+    return(<React.Fragment>
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" name="ename" onChange={(e)=>this.handleSubmit(e)}></input>
+                <select name = "categories" name="category" onChange={(e)=>this.handleSubmit(e)}>
+                {
+                    data.map(categories=> <option value={categories.category}>{categories.category}</option>)
+                }
+                </select>  
+            </form>
 
-export default App;
+            <p>My Name is {this.state.ename}</p>
+            <p>My Category is {this.state.category}</p>
+                {
+                   data.map(categories=>{
+                       if(categories.category===this.state.category){
+                          console.log('categoryy  ',categories.category);
+                          <p>hellloooooo</p>
+                          categories.questions.map(question=> <p>hello bro {question.question}</p>)
+                       }
+                   }) 
+                }
+        </React.Fragment>
+        )
+}
+   
+}export default Exam;
