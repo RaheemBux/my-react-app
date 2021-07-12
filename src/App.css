@@ -7,5 +7,13 @@
 .questions{
   color: brown;
 }
+.exam{
+  border-radius: 10px;
+  width: 500px;
+  height: 150px;
+  padding-top: 10px;
+  color: white;
+  background-color: violet;
+}
 
 

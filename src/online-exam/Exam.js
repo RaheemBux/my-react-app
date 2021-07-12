@@ -411,26 +411,29 @@ handleSubmit = (e)=>{
 }
 render(){
     return(<React.Fragment>
+		<center>
+			<h2>Welcome online Exam</h2>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="ename" onChange={(e)=>this.handleSubmit(e)}></input>
                 <select name = "categories" name="category" onChange={(e)=>this.handleSubmit(e)}>
                 {
                     data.map(categories=> <option value={categories.category}>{categories.category}</option>)
                 }
                 </select>  
             </form>
-
-            <p>My Name is {this.state.ename}</p>
-            <p>My Category is {this.state.category}</p>
-                {
-                   data.map(categories=>{
-                       if(categories.category===this.state.category){
-                          console.log('categoryy  ',categories.category);
-                          <p>hellloooooo</p>
-                          categories.questions.map(question=> <p>hello bro {question.question}</p>)
-                       }
-                   }) 
+			<div>
+				{
+                  data.map(record=>{
+						if(record.category===this.state.category){
+								return record.questions.map(question=>{
+									return <div className="exam"> 
+										<p>{question.question}</p>
+									</div>
+								})
+						}
+					})
                 }
+			</div>
+		</center>       
         </React.Fragment>
         )
 }
