@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Login from './login/Login.js';
 import Exam from './online-exam/Exam';
 
 let data = [

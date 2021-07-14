@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Question from "./Question";
+import Questions from "./Questions";
 
 
 let data = [
@@ -423,18 +425,7 @@ render(){
 				{
                   data.map(record=>{
 						if(record.category===this.state.category){
-								return record.questions.map(question=>{
-									return <div className="exam"> 
-										<p>{question.question}</p>
-										{
-											question.options.map(option=>{
-												return <div> 
-														<input type="radio" name="options" value={option}/><label>{option}</label>
-													</div>											
-											})
-										}
-									</div>
-								})
+							return <Questions questions = {record.questions}></Questions>	
 						}
 					})
                 }	
