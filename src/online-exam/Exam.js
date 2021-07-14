@@ -411,7 +411,6 @@ handleSubmit = (e)=>{
 }
 render(){
     return(<React.Fragment>
-		<center>
 			<h2>Welcome online Exam</h2>
             <form onSubmit={this.handleSubmit}>
                 <select name = "categories" name="category" onChange={(e)=>this.handleSubmit(e)}>
@@ -427,13 +426,19 @@ render(){
 								return record.questions.map(question=>{
 									return <div className="exam"> 
 										<p>{question.question}</p>
+										{
+											question.options.map(option=>{
+												return <div> 
+														<input type="radio" name="options" value={option}/><label>{option}</label>
+													</div>											
+											})
+										}
 									</div>
 								})
 						}
 					})
-                }
-			</div>
-		</center>       
+                }	
+			</div>   
         </React.Fragment>
         )
 }
