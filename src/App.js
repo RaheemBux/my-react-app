@@ -399,7 +399,7 @@ let data = [
 function App() {
   return <React.Fragment>
     <div className="App">
-		<Exam></Exam>
+		<Exam/>
 	</div>
   </React.Fragment>
 }

@@ -1,21 +1,22 @@
 import { Component } from "react"
+import Input from "../components/Input"
 
-class Question extends Component{
-    constructor(props){
-        super(props)
+const Question = (props) => {
+
+    const handleChange = (e) =>{
+        console.log('Valueee ',e.target.value)
+        console.log(props.name)
     }
-    render(){
-        return <div className="exam">
-        <p>{this.props.question.question}</p>
-        {
-            this.props.question.options.map(option=>{
-               return <div>
-                   <input type="radio" name="options" value={option}/><label>{option}</label>
-                </div>
-            })   
-        }  
+
+    return <div className="exam">
+    <p>{props.question.question}</p>
+    {
+        props.question.options.map(option=>{
+           return <div>
+               <Input type="radio" checked ={props.isChecked} name = {props.name} onChange = {handleChange} className="myInput" value={option}/><label>{option}</label>
+            </div>
+        })   
+    }  
     </div>
-
-    }
-}
+} 
 export default Question
