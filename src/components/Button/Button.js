@@ -6,10 +6,9 @@ const Button = (props) =>{
         name = {name}
         onClick = {onClick}
         height = {height}
-        width = {width}
-        type = "button">
+        width = {width}>
         {text}
     </button>
     )
-};
+}
 export default Button

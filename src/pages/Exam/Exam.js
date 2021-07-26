@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Questions from "./Questions";
-
+import React, { Component } from "react"
+import Questions from "../../components/Questions/Questions"
+import '../../pages/Exam/Exam.css'
 
 const data = [
 	{
@@ -398,39 +398,37 @@ const data = [
 ];
 class Exam extends Component{
 
-constructor(props){
-    super(props)
+	constructor(props){
+		super(props)
 
-    this.state = {
-        category : '',
-        ename : '',
-    }  
-}
-handleSubmit = (e)=>{
-    this.setState({ [e.target.name]: e.target.value}); 
-    e.preventDefault();
-}
-render(){
-    return(<React.Fragment>
-			<h2>Welcome online Exam</h2>
-            <form onSubmit={this.handleSubmit}>
-                <select name = "categories" name="category" onChange={(e)=>this.handleSubmit(e)}>
-                {
-                    data.map(categories=> <option value={categories.category}>{categories.category}</option>)
-                }
-                </select>  
-            </form>
-			<div>
-				{
-                  data.map(record=>{
-						if(record.category===this.state.category){
-							return <Questions questions = {record.questions}></Questions>	
-						}
-					})
-                }	
-			</div>   
-        </React.Fragment>
-        )
-}
-   
-}export default Exam;
+		this.state = {
+			category : '',
+		}  
+	}
+	handleSubmit = (e)=>{
+		this.setState({ [e.target.name]: e.target.value}); 
+		e.preventDefault();
+	}
+	render(){
+		return(<div>
+				<h2>Welcome to online Exam</h2>
+				<form onSubmit={this.handleSubmit}>
+					<select className="category-select" name="categories" name="category" onChange={(e)=>this.handleSubmit(e)}>
+					{
+						data.map(categories=> <option value={categories.category}>{categories.category}</option>)
+					}
+					</select>  
+				</form>
+				<div>
+					{
+					data.map(record=>{
+							if(record.category===this.state.category){
+								return <Questions questions = {record.questions}></Questions>	
+							}
+						})
+					}	
+				</div>   
+			</div>
+			)
+	} 
+}export default Exam

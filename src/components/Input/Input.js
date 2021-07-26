@@ -1,5 +1,5 @@
 const Input = (props) =>{
-    const {type,className,name,value,onClick,onChange,radioGroup,checked} = props
+    const {type,name,className,value,onClick,onChange,radioGroup,checked} = props
     return (
         <>
         <input

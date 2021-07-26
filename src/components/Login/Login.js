@@ -1,6 +1,6 @@
-import './login.css';
+import '../Login/Login.css';
 
-function Login(){
+const Login = () =>{
     return <div>
         <div className="center">
             <h2>Login Form</h2>

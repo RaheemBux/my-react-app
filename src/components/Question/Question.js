@@ -1,10 +1,11 @@
-import Input from "../components/Input"
+import Input from "../Input/Input"
+import '../Question/Question.css'
 
 const Question = (props) => {
 
     const {question,value,handleChange} = props
     
-    return <div className="exam">
+    return <div className="question">
         <p>{question.question}</p>
         {
             question.options.map(option=>{

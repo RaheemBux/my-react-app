@@ -7,7 +7,7 @@ const Result = (props) => {
         <p>Total Attempted Questions : {totalAttempted}</p>
         <p>Total Right Answers : {rightAnswers}</p>
         <p>Total Wrong Answers : {wrongAnswers}</p>
-        <p>Total Questions : {10}</p>
+        <p>Total Questions : {rightAnswers+wrongAnswers}</p>
     </div></center>
 }
 export default Result
