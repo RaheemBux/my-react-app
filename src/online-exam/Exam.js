@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Question from "./Question";
 import Questions from "./Questions";
 
 
-let data = [
+const data = [
 	{
 		"category":"Energy",
 		"questions":
