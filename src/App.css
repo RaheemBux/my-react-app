@@ -7,6 +7,9 @@ body{
   margin: 0;
   padding: 15px;
   height: 100vh;
+  background: url("exam.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 
